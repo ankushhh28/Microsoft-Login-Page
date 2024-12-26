@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+/*^ It is a pseudo class that selects the root element(<html> in case of HTML) of the document */
+/*^ It is used for defining variables in the document in CSS */
+:root {
+    font-size: 14px;
+
+    /** In CSS variables are declared using the syntax: --variable-name: value; */
+    --primary: #0067b8;
+    --secondary: rgba(0,0,0,0.2);
+    --secondaryVariant: rgba(0,0,0,0.7);
+    --shadow: var(--secondary) 0px 2px 6px;
+
+    /** Shadow property: offset-x offset-y blur-radius spread-radius color */
+    /** offset-x means shadow horizontally right me kitna move karega -ve means left me kitna move karega */
+    /** same for offset-y */
+    /** blur-radius defines shadow kitna blur dikhega */
+    /** spread-radius defines that shadow kitna bada dikhega */
+}
+
+.logo {
+    width: 108px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: #1b1b1b;
+    background: url(./assets/bg.svg);
+}
+
+.main-heading {
+    font-weight: 500;
+}
+
+.container {
+    width: 440px;
+    padding: 3rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    box-shadow: var(--shadow);
+}
+
+.textInput {
+    /** It applies padding vertically, meaning it affects the top (block-start) and bottom (block-end) sides of the element. */
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--secondaryVariant);
+    font-size: medium;
+}
+
+/*^ only apply when we focus the elemnents using keyboard it avoids mouse-click */
+.textInput:focus-visible {
+    border-bottom: 1px solid var(--primary);
+}
+
+.container a {
+    color: var(--primary);
+}
+
+.container a:hover {
+    color: var(--secondaryVariant);
+    text-decoration: underline;
+}
+
+.bottom-buttons {
+    margin-block: 0.7rem;
+    margin-left: auto;
+}
+
+.bottom-buttons .buttons {
+    font-size: medium;
+    padding: 0.4rem 2.7rem;
+    cursor: pointer;
+}
+
+#backButton {
+    background: var(--secondary);
+}
+
+#backButton:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+#nextButton {
+    background: var(--primary);
+    color: #fff;
+}
+
+#nextButton:hover {
+    background: #0060a9;
+}
+
+.sign-in-options {
+    width: 440px;
+    padding: 0.5rem 3rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: medium;
+    font-weight: 500;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
+
+.sign-in-options:hover {
+    background: var(--secondary);
+}
